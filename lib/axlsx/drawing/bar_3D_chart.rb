@@ -57,7 +57,7 @@ module Axlsx
     end
 
     # validation regex for gap amount percent
-    GAP_AMOUNT_PERCENT = /0*(([0-9])|([1-9][0-9])|([1-4][0-9][0-9])|500)%/
+    GAP_AMOUNT_PERCENT = /0*(([0-9])|([1-9][0-9])|([1-4][0-9][0-9])|500)/
 
     # Creates a new bar chart object
     # @param [GraphicFrame] frame The workbook that owns this chart.
@@ -109,7 +109,7 @@ module Axlsx
 
     # space between bar or column clusters, as a percentage of the bar or column width.
     def gap_depth=(v)
-      RegexValidator.validate "Bar3DChart.gap_didth", GAP_AMOUNT_PERCENT, v
+      RegexValidator.validate "Bar3DChart.gap_depth", GAP_AMOUNT_PERCENT, v
       @gap_depth=(v)
     end
     alias :gapDepth= :gap_depth=
